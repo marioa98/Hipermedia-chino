@@ -17,8 +17,11 @@ passport.use(new googleStrategy({
     console.log(accessToken);
 }));
 
+//Redirecciona a la API de google para validar credenciales con google.
 app.get('/auth/google', passport.authenticate('google', {
     scope: ['profile', 'email']
-}))
+}));
+
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 app.listen(port, () => console.log(`Escuchando en el puerto ${port}`));
