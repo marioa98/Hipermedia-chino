@@ -13,6 +13,9 @@ app.use(cookieSession({
     keys: [keys.cookieKey]
 }))
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 let port = process.env.PORT || 4000;
 mongoose.connect(keys.mongoURI);
 
