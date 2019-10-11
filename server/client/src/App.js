@@ -7,18 +7,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <h2>
           Chingue su madre el américa
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        </h2>
       </header>
+
+      <p className="App-intro">
+        To get started, edit <code>src/App.js</code> y ya no se...
+      </p>
+
+      <a href="http://localhost:4000/auth/google">
+          Inicia con gugul.
+      </a>
+
     </div>
   );
 }
