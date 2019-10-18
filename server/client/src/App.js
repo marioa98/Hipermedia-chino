@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.jpeg';
 import './App.css';
 
 function App() {
@@ -10,16 +10,15 @@ function App() {
         <h2>
           Chingue su madre el américa
         </h2>
+
+        <p className="App-intro">
+          We, al chile ya jala tu chingadera con proxy, server y todo el pedo
+        </p>
+
+        <a href="/auth/google">
+            Inicia con gugul.
+        </a>
       </header>
-
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> y ya no se...
-      </p>
-
-      <a href="http://localhost:4000/auth/google">
-          Inicia con gugul.
-      </a>
-
     </div>
   );
 }
