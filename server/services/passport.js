@@ -24,6 +24,10 @@ passport.use(new googleStrategy({
 
 }, async (accessToken, refreshToken, profile, done) => {
 
+    /**
+     * Una de las estrategias que se pueden aplicar al momento de hacer refactor, es modificar las partes de las promesas,
+     * cambiandolas por una función asincrona y almacenando el resultado en una variable.
+     */
     const existingUser = await User.findOne({
         googleId: profile.id
     })
@@ -31,15 +35,14 @@ passport.use(new googleStrategy({
     if (existingUser) {
         //We already have a record with a given profile ID.
         done(null, existingUser); //done([error], [usuario])
-    } else {
-        //We don't have a user record with this ID, make a new record.
-        const user = await new User({
-            googleId: profile.id
-        }).save()
-
-        done(null, user);
     }
 
+    //We don't have a user record with this ID, make a new record.
+    const user = await new User({
+        googleId: profile.id
+    }).save()
+
+    done(null, user);
 }));
 
 //200.68.139.39/32
